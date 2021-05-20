@@ -1,0 +1,83 @@
+{
+  "biomes": [
+    "minecraft:dark_forest",
+    "minecraft:dark_forest_hills"
+  ],
+  "match": [
+    [
+      "minecraft:dark_oak_log",
+      "minecraft:dark_oak_leaves"
+    ]
+  ],
+  "replace": {
+    "config": {
+      "feature": {
+        "config": {
+          "features": [
+            {
+              "feature": {
+                "config": {
+                  "template": "terraforged:dark_oak_large"
+                },
+                "type": "terraforged:template"
+              },
+              "chance": 0.3
+            },
+            {
+              "feature": {
+                "config": {
+                  "template": "terraforged:dark_oak_small"
+                },
+                "type": "terraforged:template"
+              },
+              "chance": 0.2
+            },
+            {
+              "feature": {
+                "config": {
+                  "template": "terraforged:birch_forest"
+                },
+                "type": "terraforged:template"
+              },
+              "chance": 0.05
+            },
+            {
+              "feature": {
+                "config": {
+                  "template": "terraforged:oak_forest"
+                },
+                "type": "terraforged:template"
+              },
+              "chance": 0.025
+            }
+          ],
+          "default": {
+            "config": {
+              "template": "terraforged:dark_oak_large"
+            },
+            "type": "terraforged:template"
+          }
+        },
+        "type": "minecraft:random_selector"
+      },
+      "decorator": {
+        "config": {
+          "placement": {
+            "config": {
+              "radius": 5,
+              "scale": 0.3,
+              "jitter": 0.8,
+              "biome_fade": 0.2,
+              "density_scale": 300,
+              "density_variation": 0.75
+            },
+            "type": "terraforged:fast_poisson_surface"
+          },
+          "filter": "biome"
+        },
+        "type": "terraforged:filter"
+      }
+    },
+    "type": "minecraft:decorated"
+  }
+}
